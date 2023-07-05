@@ -119,7 +119,7 @@ class _HtmlEditorWidgetMobileState extends State<HtmlEditorWidget> {
           }
         },
         child: Container(
-          height: docHeight + 10,
+          height: docHeight,
           decoration: widget.otherOptions.decoration,
           child: Column(
             children: [
@@ -147,6 +147,9 @@ class _HtmlEditorWidgetMobileState extends State<HtmlEditorWidget> {
                         });
                   },
                   initialOptions: InAppWebViewGroupOptions(
+                      ios: IOSInAppWebViewOptions(
+                        disableInputAccessoryView: true,
+                      ),
                       crossPlatform: InAppWebViewOptions(
                         javaScriptEnabled: true,
                         transparentBackground: true,
