@@ -147,9 +147,6 @@ class _HtmlEditorWidgetMobileState extends State<HtmlEditorWidget> {
                         });
                   },
                   initialOptions: InAppWebViewGroupOptions(
-                      ios: IOSInAppWebViewOptions(
-                        disableInputAccessoryView: true,
-                      ),
                       crossPlatform: InAppWebViewOptions(
                         javaScriptEnabled: true,
                         transparentBackground: true,
