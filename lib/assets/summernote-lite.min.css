@@ -970,7 +970,7 @@ a.note-dropdown-item,a.note-dropdown-item:hover {
 }
 
 .note-editor.note-airframe.fullscreen .note-editable,.note-editor.note-frame.fullscreen .note-editable {
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .note-editor.note-airframe.fullscreen .note-resizebar,.note-editor.note-frame.fullscreen .note-resizebar {
