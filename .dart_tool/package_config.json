@@ -75,7 +75,7 @@
     },
     {
       "name": "flutter_keyboard_visibility",
-      "rootUri": "file:///Users/ibrahim/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility-5.4.0",
+      "rootUri": "file:///Users/ibrahim/.pub-cache/hosted/pub.dev/flutter_keyboard_visibility-5.4.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -254,7 +254,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2024-01-29T09:14:49.067732Z",
+  "generated": "2024-01-29T09:29:56.217518Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }
