@@ -32,6 +32,9 @@ class HtmlEditorWidget extends StatefulWidget {
   final HtmlToolbarOptions htmlToolbarOptions;
   final OtherOptions otherOptions;
 
+  static ValueNotifier<Map<String, dynamic>> toolBarListener =
+      ValueNotifier({});
+
   @override
   _HtmlEditorWidgetMobileState createState() => _HtmlEditorWidgetMobileState();
 }
@@ -116,7 +119,7 @@ class _HtmlEditorWidgetMobileState extends State<HtmlEditorWidget> {
           }
         },
         child: Container(
-          height: docHeight + 10,
+          height: docHeight,
           decoration: widget.otherOptions.decoration,
           child: Column(
             children: [
@@ -137,7 +140,7 @@ class _HtmlEditorWidgetMobileState extends State<HtmlEditorWidget> {
                         handlerName: 'FormatSettings',
                         callback: (e) {
                           var json = e[0] as Map<String, dynamic>;
-                          print(json);
+                          HtmlEditorWidget.toolBarListener.value = json;
                           if (widget.controller.toolbar != null) {
                             widget.controller.toolbar!.updateToolbar(json);
                           }
@@ -528,9 +531,9 @@ class _HtmlEditorWidgetMobileState extends State<HtmlEditorWidget> {
                           callback: (contents) {
                             if (widget.htmlEditorOptions.shouldEnsureVisible &&
                                 Scrollable.of(context) != null) {
-                              Scrollable.of(context)!.position.ensureVisible(
-                                    context.findRenderObject()!,
-                                  );
+                              // Scrollable.of(context)!.position.ensureVisible(
+                              //       context.findRenderObject()!,
+                              //     );
                             }
                             if (widget.callbacks != null &&
                                 widget.callbacks!.onChangeContent != null) {
