@@ -93,6 +93,14 @@ class HtmlEditorController extends unsupported.HtmlEditorController {
         source: '\$("#summernote-2").summernote("fullscreen.toggle");');
   }
 
+  @override
+  Future<String> getSelectedTextMobile() async {
+    String data = await _evaluateJavascript(
+            source: 'window.getSelection().toString()', isCustomCall: true) ??
+        '';
+    return data;
+  }
+
   /// Sets the focus to the editor.
   @override
   void setFocus() {
@@ -255,8 +263,8 @@ class HtmlEditorController extends unsupported.HtmlEditorController {
   }
 
   /// Helper function to evaluate JS and check the current environment
-  dynamic _evaluateJavascript({required source}) async {
-    if (!kIsWeb) {
+  dynamic _evaluateJavascript({required source, bool? isCustomCall}) async {
+    if (!kIsWeb || isCustomCall == true) {
       if (editorController == null || await editorController!.isLoading()) {
         throw Exception(
             'HTML editor is still loading, please wait before evaluating this JS: $source!');
