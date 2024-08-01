@@ -115,6 +115,8 @@ class HtmlEditorController {
 
   Future<String> getSelectedTextMobile() => Future.value('');
 
+  void replaceSelectedText(String text) {}
+
   /// Recalculates the height of the editor to remove any vertical scrolling.
   /// This method will not do anything if [autoAdjustHeight] is turned off.
   void recalculateHeight() {}

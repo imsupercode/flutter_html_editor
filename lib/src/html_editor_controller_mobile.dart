@@ -101,6 +101,25 @@ class HtmlEditorController extends unsupported.HtmlEditorController {
     return data;
   }
 
+  @override
+  void replaceSelectedText(String text) {
+    _evaluateJavascript(source: '''
+       (function () {
+          let selectedRange = null;
+          const selection = window.getSelection();
+          if (selection.rangeCount > 0) {
+            selectedRange = selection.getRangeAt(0);
+          }
+          const newNode = document.createTextNode('$text');
+          selectedRange.deleteContents();
+          selectedRange.insertNode(newNode);
+        
+          selection.removeAllRanges();
+          selectedRange = null;
+        })();      
+      ''');
+  }
+
   /// Sets the focus to the editor.
   @override
   void setFocus() {
