@@ -101,30 +101,6 @@ class HtmlEditorController extends unsupported.HtmlEditorController {
     return data;
   }
 
-//   (function() {
-//   let selectedRange = null;
-//   const selection = window.getSelection();
-
-//   if (selection.rangeCount > 0) {
-//     selectedRange = selection.getRangeAt(0);
-
-//     // Create a new fragment and append the new text node to it
-//     const fragment = document.createDocumentFragment();
-//     const newNode = document.createTextNode('$text');
-//     fragment.appendChild(newNode);
-
-//     // Delete the contents of the selected range
-//     selectedRange.deleteContents();
-
-//     // Insert the fragment into the selected range
-//     selectedRange.insertNode(fragment);
-
-//     // Clear the selection
-//     selection.removeAllRanges();
-//     selectedRange = null;
-//   }
-// })();
-
   @override
   void replaceSelectedText(String text) {
     _evaluateJavascript(source: '''
