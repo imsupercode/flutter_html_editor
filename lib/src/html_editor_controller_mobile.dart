@@ -110,7 +110,11 @@ class HtmlEditorController extends unsupported.HtmlEditorController {
           if (selection.rangeCount > 0) {
             selectedRange = selection.getRangeAt(0);
           }
-          const newNode = document.createTextNode('$text');
+           const newNode = document.createElement("div");
+           newNode.style.whiteSpace="break-spaces";
+           newNode.style.fontFamily="inherit !important";
+           newNode.style.overflow="auto"
+           newNode.innerText = (`$text`);
           selectedRange.deleteContents();
           selectedRange.insertNode(newNode);
         
