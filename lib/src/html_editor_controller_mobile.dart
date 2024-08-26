@@ -114,7 +114,7 @@ class HtmlEditorController extends unsupported.HtmlEditorController {
            newNode.style.whiteSpace="break-spaces";
            newNode.style.fontFamily="inherit !important";
            newNode.style.overflow="auto"
-           newNode.innerText = (`$text`);
+           newNode.innerHTML = (`$text`);
           selectedRange.deleteContents();
           selectedRange.insertNode(newNode);
         
